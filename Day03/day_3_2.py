@@ -11,25 +11,22 @@ def findTrees(world, pattern):
     x, y, trees = 0, 0, 0
     dx, dy = pattern[0], pattern[1]
     mapHeight, lineLength = len(world), len(world[0])
-
     for _ in world:
         x += dx
-        x %= lineLength
         y += dy
-
-        if world[y][x] == "#":
-            trees += 1
-
+        if y < mapHeight:
+            x = x % lineLength
+            if world[y][x] == "#":
+                trees += 1
     return trees
 
 
 world = read("input.txt")
 patterns = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]]
 
-mul = 1
+answer = 1
 for pattern in patterns:
-    mul *= findTrees(world, pattern)
+    answer *= findTrees(world, pattern)
 
-print(mul)
-
+print(answer)
 
