@@ -12,14 +12,14 @@ def findTrees(world, pattern):
     dx, dy = pattern[0], pattern[1]
     mapHeight, lineLength = len(world), len(world[0])
 
-    for line in world:
+    for _ in world:
         x += dx
+        x %= lineLength
         y += dy
 
-        if y < mapHeight:
-            x = x % lineLength
-            if world[y][x] == "#":
-                trees += 1
+        if world[y][x] == "#":
+            trees += 1
+
     return trees
 
 
@@ -31,4 +31,5 @@ for pattern in patterns:
     mul *= findTrees(world, pattern)
 
 print(mul)
+
 
