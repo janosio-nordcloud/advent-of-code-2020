@@ -1,6 +1,3 @@
-import math
-
-
 def read(f):
     fileContent = open(f, 'r')
     array = []
