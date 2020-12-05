@@ -62,7 +62,7 @@ def getValidPasswords(passports, required_fields):
                             valid += 1
 
                 if field == 'hcl':
-                    match = re.search(r'^#(?:[0-9a-fA-F]{3}){1,2}$', passport[field])
+                    match = re.search(r'^#(?:[0-9a-fA-F]{6})$', passport[field])
                     if match is not None:
                         valid += 1
 

@@ -50,3 +50,7 @@ for seat in seats:
     seatsIds.append(seatId)
 
 print("max ID:", max(seatsIds))
+
+for id in seatsIds:
+    if not seatsIds.count(id + 1) and seatsIds.count(id + 2):
+        print("your ID:", id+1)
