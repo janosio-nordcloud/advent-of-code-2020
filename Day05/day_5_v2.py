@@ -11,13 +11,11 @@ def splitRowsAndCols(string):
 
 
 def decodeRows(string):
-    string = string.replace("B", "1").replace("F", "0")
-    return int(string, 2)
+    return int(string.replace("B", "1").replace("F", "0"), 2)
 
 
 def decodeCols(string):
-    string = string.replace("R", "1").replace("L", "0")
-    return int(string, 2)
+    return int(string.replace("R", "1").replace("L", "0"), 2)
 
 
 def getSeatId(row, col, number=8):
@@ -36,4 +34,4 @@ print("max ID:", max(seatsIds))
 
 for id in seatsIds:
     if not seatsIds.count(id + 1) and seatsIds.count(id + 2):
-        print("your ID:", id+1)
+        print("ID:", id+1)
