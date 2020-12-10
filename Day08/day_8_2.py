@@ -4,6 +4,7 @@ from collections import defaultdict
 def read(f):
     file = open(f, "r")
     prog = [line.strip().split() for line in file.readlines() if line.strip()]
+    file.close()
     return [(operation, int(value)) for operation, value in prog]
 
 

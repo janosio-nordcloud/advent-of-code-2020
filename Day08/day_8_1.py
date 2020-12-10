@@ -13,7 +13,7 @@ def runProgram(program):
     executedInstructions = []
 
     while not executedInstructions.count(currentIndex):
-        instruction = program[currentIndex].split(" ")
+        instruction = program[currentIndex].split()
         if instruction[0] == 'acc':
             acc += int(instruction[1])
             executedInstructions.append(currentIndex)
